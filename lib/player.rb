@@ -33,7 +33,7 @@ class Player
     end
 
     def compute_damage
-        return rand(100..600)        
+        return rand(1..6)        
     end
 end
 

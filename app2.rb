@@ -10,13 +10,11 @@ puts "========================= JEU DE COMBAT CLAQUE ======================="
 puts "======================================================================"
 puts ""
 
-def render_ascii_art
-  File.readlines("ascii.txt") do |line|
-    puts line
-  end
+def display_ascii_art 
+  puts File.read("lib/ascii.txt")
 end
 
-render_ascii_art
+display_ascii_art
 
 puts "select your character:"
 name = gets.chomp
@@ -43,7 +41,7 @@ while human_player.life_points > 0 && (bot1.life_points > 0 || bot2.life_points 
     human_player.attack(bot2)
   end
     if (bot1.life_points == 0) && (bot2.life_points == 0)
-        puts "Congrats, you defeated the bots (⌐■_■)"
+        puts "Congrats, you defeated the bots ( ͡° ͜ʖ ͡°)"
         break
     end
   sleep 1
@@ -56,7 +54,7 @@ while human_player.life_points > 0 && (bot1.life_points > 0 || bot2.life_points 
     sleep 0.5
     human_player.show_state
   if human_player.life_points == 0
-    puts "Bots just killed you d[-_-]b d[-_-]b you lost, loser"
+    puts "Bots (⌐■_■) just killed you d[-_-]b you lost, loser"
     break
   end
 end
